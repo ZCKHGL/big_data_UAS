@@ -304,15 +304,15 @@ Project ini dibuat untuk keperluan **UAS Mata Kuliah Big Data**.
 
 ## 👤 Author
 
-**Ananta Deva**  
-NIM: 23201254
-Program Studi: Teknik Informatika
-Universitas: Institut Teknologi & Bisnis Asia Malang  
+**Ananta Deva** <br>
+NIM: 23201254 <br>
+Program Studi: Teknik Informatika <br>
+Universitas: Institut Teknologi & Bisnis Asia Malang
 
-**Zacky Haigel Putra Sandy Asmara** 
-NIM: 23201248 
-Program Studi: Teknik Informatika
-Universitas: Institut Teknologi & Bisnis Asia Malang  
+**Zacky Haigel Putra Sandy Asmara** <br>
+NIM: 23201248 <br>
+Program Studi: Teknik Informatika <br>
+Universitas: Institut Teknologi & Bisnis Asia Malang
 
 ---
 
