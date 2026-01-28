@@ -130,6 +130,8 @@ def load_data():
         st.error(f"Gagal membaca file CSV: {e}")
         return None, None, None
 
+df_country, df_products, df_trend = load_data()
+
 # --- 5. SIDEBAR ---
 with st.sidebar:
     # LANGUAGE SWITCHER
