@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 # --- 1. CONFIGURATION & ASSETS ---
 st.set_page_config(
@@ -103,17 +104,31 @@ def html_card(title, value, icon_name, tooltip=""):
     </div>
     """, unsafe_allow_html=True)
 
+# --- Update bagian load_data ---
 @st.cache_data
 def load_data():
-    try:
-        df_c = pd.read_csv("output_country_stats.csv")
-        df_p = pd.read_csv("output_top_products.csv")
-        df_t = pd.read_csv("output_sales_trend.csv")
-        return df_c, df_p, df_t
-    except FileNotFoundError:
+    required_files = [
+        "output_country_stats.csv",
+        "output_top_products.csv",
+        "output_sales_trend.csv"
+    ]
+    
+    # Cek apakah semua file ada
+    missing_files = [f for f in required_files if not os.path.exists(f)]
+    
+    if missing_files:
+        st.error(f"❌ File data hilang: {', '.join(missing_files)}")
+        st.warning("Pastikan Anda sudah menjalankan 'spark_etl.py' di lokal DAN meng-upload file CSV hasilnya ke GitHub!")
         return None, None, None
 
-df_country, df_products, df_trend = load_data()
+    try:
+        df_country = pd.read_csv("output_country_stats.csv")
+        df_products = pd.read_csv("output_top_products.csv")
+        df_trend = pd.read_csv("output_sales_trend.csv")
+        return df_country, df_products, df_trend
+    except Exception as e:
+        st.error(f"Gagal membaca file CSV: {e}")
+        return None, None, None
 
 # --- 5. SIDEBAR ---
 with st.sidebar:
