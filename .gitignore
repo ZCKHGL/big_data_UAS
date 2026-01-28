@@ -48,7 +48,6 @@ env/
 # --- Dataset (Large Files) ---
 # Exclude raw dataset to avoid bloating the repository
 # Data should be loaded from HDFS in production
-*.csv
 !requirements.txt
 
 # --- Spark Logs & Temporary Files ---
